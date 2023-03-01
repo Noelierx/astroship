@@ -6,6 +6,7 @@ import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string;
+  description: string;
 }
 
 // const { src } = await getImage({
@@ -24,6 +25,7 @@ const resolvedImageWithDomain = new URL(
 ).toString();
 
 const { title } = Astro.props;
+const { description } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "Game'Her"
@@ -31,7 +33,7 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -41,7 +43,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description={description}
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
