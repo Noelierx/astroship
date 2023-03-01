@@ -2,17 +2,21 @@
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
-import Footer from "@components/footer.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+import heroImage from "@assets/home.png";
 ---
 
 <Layout title="">
   <Container>
-    <Hero />
+    <Hero 
+      pictureUrl={heroImage}
+      pictureAlt=""
+      title="Reveal Yourself"
+      description="Game'Her est une association ayant pour but de promouvoir la mixité, la diversité et l’inclusion dans les domaines du jeu vidéo, de l’audiovisuel et de l’esport. Nos actions regroupent la sensibilisation, l’information, la participation à des événements, l’organisation de tournois mixtes et la collaboration."
+    />
     <Features />
     <Logos />
-    <Cta />
   </Container>
 </Layout>

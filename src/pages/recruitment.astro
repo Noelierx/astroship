@@ -1,0 +1,47 @@
+---
+import Container from "@components/container.astro";
+import Contactform from "@components/contactform.astro";
+import Features from "@components/features.astro";
+import Hero from "@components/hero.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import heroImage from "@assets/recruitment.png";
+---
+
+<Layout title="">
+  <Container>
+    <Hero 
+      pictureUrl={heroImage}
+      pictureAlt=""
+      title="Recrutement"
+      description="Game'Her est constamment à la recherche de bénévoles pour nous aider à promouvoir la diversité dans l'esport, le jeu vidéo et le streaming. Si vous partagez notre passion pour l'inclusion et l'égalité, nous vous invitons à rejoindre notre équipe de bénévoles. Nous avons besoin de personnes pour nous aider dans la communication, l'organisation d'événements, la participation à des tournois mixtes et bien plus encore. Rejoignez notre communauté de bénévoles pour contribuer à un monde de jeu plus inclusif et diversifié !"
+    />
+    <Features />
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+        <div>
+            <div class="mt-16 md:mt-0">
+                <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+                  Rejoindre Game'Her
+                </h2>
+                <p class="text-lg mt-4 text-slate-600">
+                    Vous souhaitez nous rejoindre ? Envoyez nous un mail de motivation via le formulaire et nous vous répondrons le plus rapidement possible !
+                </p>
+            </div>
+          <div class="mt-5">
+            <div class="flex items-center mt-2 space-x-2 text-gray-600">
+              <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+              <a href="mailto:contact@gameher.fr">contact@gameher.fr</a>
+            </div>
+            <div class="flex items-center mt-2 space-x-2 text-gray-600">
+              <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+              <a href="mailto:recrutement@gameher.fr">recrutement@gameher.fr</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Contactform />
+        </div>
+      </div>
+  </Container>
+</Layout>

@@ -3,7 +3,8 @@ import { getCollection } from "astro:content";
 import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
+import Hero from "@components/hero.astro";
+import heroImage from "@assets/about.png";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -11,22 +12,23 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 });
 ---
 
-<Layout title="About">
+<Layout title="A propos">
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
-    </Sectionhead>
-
+    <Hero 
+      pictureUrl={heroImage}
+      pictureAlt=""
+      title="A propos"
+      description="Game’Her est une association de loi 1901 créée en août 2017 dont les valeurs sont la mixité, la diversité et l’inclusion dans les domaines du jeu vidéo, de l’audiovisuel et de l’esport."
+    />
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Qui sommes nous ?
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
+      <p class="text-lg leading-relaxed text-slate-500">Afin de rendre plus visibles les identités plurielles, au niveau du genre mais aussi de l’orientation sexuelle et de la culture, nous menons des actions diverses : sensibiliser aux stéréotypes et lutter contre les discriminations présentes dans le monde du jeu vidéo, mettre en valeur des jeux inclusifs et des politiques respectueuses de la diversité au sein de ceux-ci, et offrir plus d’opportunités aux femmes d’atteindre des sphères semi-professionnelles et professionnelles en tant que joueuses.</p>
+      <p class="text-lg leading-relaxed text-slate-500">Nous participons également à l’inclusion des personnes en situation de handicap. À cette fin, nous agissons à deux niveaux : la sensibilisation des équipes de développement afin de rendre leur média plus accessible, et l’information des personnes présentant un handicap au sujet des outils existants qui peuvent être adaptés à leur situation.</p>
+      <p class="text-lg leading-relaxed text-slate-500">Game’Her entreprend aussi des actions à destination des enfants et de leurs parents. Nous accompagnons les enfants dans la découverte du monde du jeu vidéo, de l’audiovisuel et de l’esport ; et informons les parents sur ces domaines.</p>
+      <p class="text-lg leading-relaxed text-slate-500">Nos actions regroupent l’information et la sensibilisation via des campagnes de communication et des articles de presse, la participation à des tables rondes et des festivals, l’organisation de tournois mixtes, la création d’émissions et de débats. Nous collaborons également avec d’autres associations et des partenaires externes.</p>
+      <p class="text-lg leading-relaxed text-slate-500">L’association compte actuellement une vingtaine de bénévoles. L’équipe est composée de personnes passionnées par le jeu vidéo, l’audiovisuel et l’esport qui se rassemblent afin d’œuvrer pour plus d’inclusion et de diversité dans ces domaines.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
